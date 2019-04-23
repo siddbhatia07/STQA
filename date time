@@ -1,0 +1,38 @@
+Date Time
+
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	int date,month,year;
+	int arr[]={31,28,31,30,31,30,31,31,30,31,30,31};
+	cout<<"Enter current date"<<endl;
+	cin>>date>>month>>year;
+	if(date>1)
+	{
+		cout<<"previous date:"<<date-1<<"/"<<month<<"/"<<year<<endl;
+	}
+	else
+	{
+		if(month!=3 && month!=1)
+		{
+			cout<<"previous date:"<<arr[month]<<"/"<<month-1<<"/"<<year<<endl;
+		}
+		else if(month == 3)
+		{
+			if(year%4==0)
+			{
+				cout<<"previous date:"<<29<<"/"<<month-1<<"/"<<year<<endl;
+			}
+			else
+			{
+				cout<<"previous date:"<<28<<"/"<<month-1<<"/"<<year<<endl;
+			}
+		}
+		else if(month==1 && date==1)
+		{
+			cout<<"previous date:"<<31<<"/"<<12<<"/"<<year-1<<endl;
+		}
+	}
+}
